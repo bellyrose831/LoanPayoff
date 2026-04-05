@@ -39,7 +39,7 @@ def main():
     print(results)
     cur.execute('drop table testTable')
     cur.close()
-    return render_template('home.html')
+    return render_template('home.html', test=results)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
