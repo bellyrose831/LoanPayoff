@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <title>Max's Vowels</title>
+</head>
+
+<body>
+
+    <h1 onclick="playVowels()">vowels</h1>
+    <div>
+        <button id="a_button" onclick="playASound()">1</button>
+        <button id="e_button" onclick="playESound()">2</button>
+        <button id="i_button" onclick="playISound()">3</button>
+        <button id="o_button" onclick="playOSound()">4</button>
+        <button id="u_button" onclick="playUSound()">5</button>
+        <button id="y_button" onclick="playYSound()">6</button>
+    </div>
+
+</body>
+
+</html>
