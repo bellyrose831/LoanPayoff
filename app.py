@@ -8,20 +8,17 @@
 # pip install psycopg2
 
 from flask import Flask, render_template
+from db import get_db_connection
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def main():
+    conn = get_db_connection()
     
-    conn = psycopg2.connect(
-        dbname="loan_webapp_database",
-        user="loan_webapp_database_user",
-        password="Tu64h7EbmvRztWE6LW0NUkppdaoENe14",
-        port="5432"
-    )
     cur = conn.cursor()
+    
     cur.execute("""CREATE TABLE testTable (
         brand VARCHAR(255),
         model VARCHAR(255),
@@ -36,7 +33,6 @@ def main():
     )
     cur.execute('SELECT * from testTable')
     results = cur.fetchall()
-    print(results)
     cur.execute('drop table testTable')
     cur.close()
     return render_template('home.html', test=results)
