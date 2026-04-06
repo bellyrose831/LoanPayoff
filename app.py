@@ -4,12 +4,11 @@
 #airtable tokens: https://airtable.com/create/tokens
 #deployment link: https://dashboard.render.com/
 
-#pip install flask
 #run using "python app.py"
-# pip install pyairtable
 
 from flask import Flask, render_template
 from pyairtable import Api
+import pandas as pd
 import os
 
 app = Flask(__name__)
@@ -18,8 +17,15 @@ app = Flask(__name__)
 def main():
     api = Api(os.environ.get("AIRTABLE_API_KEY"))
     table = api.table('appUKKwJXXkEF1xvh', 'tblctK0jy3jj28XhT')
-    results = table.all()
-    return render_template('home.html', test=results)
+    response = table.all() 
+    #this comes through as a list of dicts (each record = a dict), want to change to pandas DF
+
+    data = []
+    for record in response:
+        data.append(record['fields'])
+
+    data = pd.DataFrame(data)
+    return render_template('home.html', test=data)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
