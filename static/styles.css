@@ -1,0 +1,17 @@
+tr, td, th {
+    text-align: center;
+    border-left: 1px var(--bs-table-border-color) solid;
+    border-right: 1px var(--bs-table-border-color) solid;
+}
+
+.maindiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#tablediv {
+    width:75%;
+    padding-top: 20px;
+}

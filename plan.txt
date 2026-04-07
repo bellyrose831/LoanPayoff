@@ -1,0 +1,6 @@
+to do:
+flask route for '/'
+create requirements.txt
+create table (using airtable)
+use airtable api to connect to table
+create basic html home page to display table

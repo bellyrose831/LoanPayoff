@@ -23,8 +23,11 @@ def main():
     data = []
     for record in response:
         data.append(record['fields'])
+        print(record)
+        print(record['fields'])
 
     data = pd.DataFrame(data)
+    print(data)
     return render_template('home.html', test=data)
 
 if __name__ == '__main__':
