@@ -1,7 +1,6 @@
-tr, td, th {
+tr, td, th, thead, tbody {
     text-align: center;
-    border-left: 1px var(--bs-table-border-color) solid;
-    border-right: 1px var(--bs-table-border-color) solid;
+    border: 1px var(--bs-table-border-color) solid;
 }
 
 .maindiv {
@@ -14,4 +13,31 @@ tr, td, th {
 #tablediv {
     width:75%;
     padding-top: 20px;
+}
+
+.newrow {
+    background-color: green;
+    font-weight: bold;
+}
+
+.modalselectors {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.modalinputgroup {
+    display: flex;
+    flex-direction: row;
+}
+
+#addpaymentrow1, #addpaymentrow2 {
+    background-color: var(--bs-primary);
+}
+
+#addpaymentrow1:hover, #addpaymentrow2:hover {
+    background-color: var(--bs-btn-hover-bg);
+    cursor: pointer;
 }

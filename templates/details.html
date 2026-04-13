@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid maindiv">
+
+        <h1>Loan Details</h1>
+        <div class="flex">
+            <div id="widget1">
+                <h3>Remaining Balance</h3>
+                <p> ${{ remBalance }} </p>
+            </div>
+            <div id="widget2">
+                <h3>Estimated Payoff Date</h3>
+                <p> {{ estPayoffDate }} </p>
+            </div>
+            <div id="widget3">
+                <h3>Monthly Minimum Payment</h3>
+                <p> ${{ minPayment }} </p>
+            </div>
+            <div id="widget4">
+                <h3>Interest Rate</h3>
+                <p> {{ interest }}% </p>
+            </div>
+            <div id="widget5">
+                <h3>Payments Made in Excess of Minimum</h3>
+                <p> ${{ extraPayments }} </p>
+            </div>
+            <div id="widget6">
+                <h3>Next Payment</h3>
+                <p> ${{ nextPaymentAmt }} on {{ nextPaymentDate }}</p>
+            </div>
+            <button>See Payment History</button>
+            <button>Make a Payment</button>
+        </div>
+</body>
+
+</html>
